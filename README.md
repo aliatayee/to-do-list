@@ -1,27 +1,38 @@
 
-# Awesome Book ES6
+# To Do List
 
-## Major languages
+## Major Technologies
 HTML5
 CSS
 JAVASCRIPT
+NPM
+WEBPACK
 
 ### Install & Setup
 
-To setup and install this sample project, follow the below steps:
+To setup and install this sample To-Do List project, follow the below steps:
 - Clone this project by the command: 
 
 ```
-$ git clone https://github.com/aliatayee/awsome-book-ES6.git
+$ git clone https://github.com/aliatayee/to-do-list.git
 ```
 
 - Then switch to the project folder by the bellow query:
 
 ```
-$ cd awsome-book-ES6
+$ cd to-do-list
 ```
 
-- Finally, run the index.html file in your browser.
+- Then run the below command to install dependencies
+
+```
+$ npm i
+```
+- Finally, run the below command to start the project.
+
+```
+$ npm start
+```
 
 ## Run tests 
 To run the tests for linters locally, you must have node installed on your computer. Install the necessary packages. Run npx stylelint "*/.{css,scss}" Run npx hint . Run npx eslint .
