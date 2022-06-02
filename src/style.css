@@ -1,0 +1,76 @@
+#todo__list__container {
+  display: grid;
+  justify-items: center;
+  background-color: white;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 13px #aaa;
+  font-family: 'Circular-Loom', sans-serif;
+}
+
+.item__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e1e1e1;
+  height: 56px;
+  justify-content: center;
+}
+
+#list__item {
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 95%;
+  justify-content: flex-start;
+  font-family: 'Circular-Loom', sans-serif;
+}
+
+.header__item i {
+  color: #a3a3a3;
+}
+
+.item__container div i {
+  color: #a3a3a3;
+}
+
+.title {
+  justify-content: start;
+  width: 100%;
+  font-family: 'Circular-Loom', sans-serif;
+  margin: 0;
+}
+
+.input__list {
+  width: 99%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-style: italic;
+  font-size: 23px;
+  font-family: 'Circular-Loom', sans-serif;
+}
+
+.input__list:focus {
+  outline: none;
+}
+
+.header__item {
+  width: 96%;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 15px;
+}
+
+.clear__btn {
+  background-color: #f3f3f3;
+  color: rgb(99, 99, 99);
+}
