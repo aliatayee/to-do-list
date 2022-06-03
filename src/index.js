@@ -1,5 +1,5 @@
 import './style.css';
-import { deleteTodo, editTodo, addTodo } from './modules/functionalities.js';
+import addTodo from './modules/addTask.js';
 import renderTodos from './modules/renderTasks.js';
 import addToLocalStorage from './modules/localStorage.js';
 
@@ -32,20 +32,40 @@ const toggle = (index) => {
   addToLocalStorage(todos);
 };
 
+/* eslint eqeqeq: 0 */
+const deleteTodo = (index) => {
+  todos = todos.filter((item) => item.index != index);
+  todos.forEach((task, i) => {
+    task.index = i;
+  });
+
+  addToLocalStorage(todos);
+};
+
+const editTodo = (index, val) => {
+  todos.forEach((item) => {
+    if (item.index == index) {
+      item.description = val;
+    }
+  });
+  addToLocalStorage(todos);
+};
+
 getFromLocalStorage();
 
 todoItemsList.addEventListener('click', (event) => {
   if (event.target.type === 'checkbox') {
     toggle(event.target.parentElement.getAttribute('data-key'));
   }
-
+});
+todoItemsList.addEventListener('click', (event) => {
   if (event.target.classList.contains('delete-button')) {
-    deleteTodo(event.target.parentElement.getAttribute('data-key'), todos);
+    deleteTodo(event.target.parentElement.getAttribute('data-key'));
   }
 });
 
 todoItemsList.addEventListener('focusout', (event) => {
   if (event.target.type === 'text') {
-    editTodo(event.target.parentElement.getAttribute('data-key'), event.target.value, todos);
+    editTodo(event.target.parentElement.getAttribute('data-key'), event.target.value);
   }
 });
