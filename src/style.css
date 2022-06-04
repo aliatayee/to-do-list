@@ -59,7 +59,7 @@ form {
   background: transparent;
   font-style: italic;
   font-size: 23px;
-  font-family: 'Circular-Loom', sans-serif;
+  font-family: monospace, sans-serif;
 }
 
 .input__list:focus {
@@ -93,12 +93,13 @@ button {
 
 .delete-button {
   margin-right: 2%;
+  color: #a3a3a3;
 }
 
 .checked {
-  font-style: normal !important;
   text-decoration: line-through;
   text-decoration-color: #a7a7a7;
   font-weight: 400;
-  color: #939393;
+  font-style: italic !important;
+  color: #868686 !important;
 }
