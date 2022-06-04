@@ -59,7 +59,7 @@ form {
   background: transparent;
   font-style: italic;
   font-size: 23px;
-  font-family: monospace,sans-serif;  
+  font-family: monospace, sans-serif;
 }
 
 .input__list:focus {
@@ -96,7 +96,6 @@ button {
 }
 
 .checked {
-  font-style: normal !important;
   text-decoration: line-through;
   text-decoration-color: #a7a7a7;
   font-weight: 400;

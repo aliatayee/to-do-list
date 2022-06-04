@@ -1,5 +1,4 @@
 const todoItemsList = document.querySelector('#list__item');
-const todoList = document.querySelector('#todo__list');
 const renderTodos = (todos) => {
   todoItemsList.innerHTML = '';
 
@@ -14,7 +13,7 @@ const renderTodos = (todos) => {
     if (item.completed === true) {
       li.classList.add('checked');
     }
- 
+
     li.innerHTML = `
                         <input type="checkbox" class="checkbox" ${checked}>
                           <input type="text" id="todo__list" value="${item.description}" class="list__description input__list todo__list ${checked}">
