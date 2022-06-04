@@ -59,7 +59,7 @@ form {
   background: transparent;
   font-style: italic;
   font-size: 23px;
-  font-family: 'Circular-Loom', sans-serif;
+  font-family: monospace,sans-serif;  
 }
 
 .input__list:focus {
@@ -100,5 +100,6 @@ button {
   text-decoration: line-through;
   text-decoration-color: #a7a7a7;
   font-weight: 400;
-  color: #939393;
+  font-style: italic !important;
+  color: #868686 !important;
 }

@@ -2,11 +2,10 @@ import './style.css';
 import addTodo from './modules/addTask.js';
 import renderTodos from './modules/renderTasks.js';
 import addToLocalStorage from './modules/localStorage.js';
-
 const taskForm = document.querySelector('.list__form');
 const taskInput = document.querySelector('.input__list');
 const todoItemsList = document.querySelector('#list__item');
-
+const ClearAllBtn = document.querySelector('.clear__btn');
 let todos = [];
 
 taskForm.addEventListener('submit', (event) => {
@@ -42,6 +41,22 @@ const deleteTodo = (index) => {
   addToLocalStorage(todos);
 };
 
+const clearAll = () => {
+      
+      todos.forEach((task) => {
+        if(task.completed === true){
+            todos = todos.filter((item) => item.index != task.index);
+           
+        }
+        
+      });
+      todos.forEach((task,i) => {
+        task.index = i;    
+      });
+       
+  addToLocalStorage(todos);
+};
+
 const editTodo = (index, val) => {
   todos.forEach((item) => {
     if (item.index == index) {
@@ -69,3 +84,4 @@ todoItemsList.addEventListener('focusout', (event) => {
     editTodo(event.target.parentElement.getAttribute('data-key'), event.target.value);
   }
 });
+ClearAllBtn.addEventListener('click', clearAll);
