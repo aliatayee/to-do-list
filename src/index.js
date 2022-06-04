@@ -2,13 +2,14 @@ import './style.css';
 import addTodo from './modules/addTask.js';
 import renderTodos from './modules/renderTasks.js';
 import addToLocalStorage from './modules/localStorage.js';
+import { clearAll, toggle } from './modules/interactiveList.js';
 
 const taskForm = document.querySelector('.list__form');
 const taskInput = document.querySelector('.input__list');
 const todoItemsList = document.querySelector('#list__item');
 const ClearAllBtn = document.querySelector('.clear__btn');
-let todos = [];
 
+let todos = [];
 taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
   addTodo(taskInput.value, todos);
@@ -22,32 +23,10 @@ const getFromLocalStorage = () => {
     renderTodos(todos);
   }
 };
-/* eslint eqeqeq: 0 */
-const toggle = (index) => {
-  todos.forEach((item) => {
-    if (item.index == index) {
-      item.completed = !item.completed;
-    }
-  });
-  addToLocalStorage(todos);
-};
 
 /* eslint eqeqeq: 0 */
 const deleteTodo = (index) => {
   todos = todos.filter((item) => item.index != index);
-  todos.forEach((task, i) => {
-    task.index = i;
-  });
-
-  addToLocalStorage(todos);
-};
-
-const clearAll = () => {
-  todos.forEach((task) => {
-    if (task.completed === true) {
-      todos = todos.filter((item) => item.index != task.index);
-    }
-  });
   todos.forEach((task, i) => {
     task.index = i;
   });
@@ -68,7 +47,7 @@ getFromLocalStorage();
 
 todoItemsList.addEventListener('click', (event) => {
   if (event.target.type === 'checkbox') {
-    toggle(event.target.parentElement.getAttribute('data-key'));
+    toggle(event.target.parentElement.getAttribute('data-key'), todos);
   }
 });
 todoItemsList.addEventListener('click', (event) => {
@@ -82,4 +61,6 @@ todoItemsList.addEventListener('focusout', (event) => {
     editTodo(event.target.parentElement.getAttribute('data-key'), event.target.value);
   }
 });
-ClearAllBtn.addEventListener('click', clearAll);
+ClearAllBtn.addEventListener('click', () => {
+  clearAll(todos);
+});
