@@ -7,7 +7,8 @@ CSS
 JAVASCRIPT
 NPM
 WEBPACK
-
+### Demo
+[To Do List](https://aliatayee.github.io/to-do-list/)
 ### Install & Setup
 
 To setup and install this sample To-Do List project, follow the below steps:
