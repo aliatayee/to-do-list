@@ -9,12 +9,25 @@
 <script defer src="index.js"></script></head>
 
 <body>
-    <div id="todo__list__container">
-        <div class="item__container"><div class="header__item"><h2 class="title">Today's To Do</h2><i class="fa-solid fa-arrows-rotate"></i></div></div>
-        <div class="item__container"><div class="header__item"><form action="#" class="list__form"><input type="text" class="input__list" placeholder="Add to your list..."> <button type="submit"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></form></div></div>
-        <div id="list__item"></div>
-        <button class="item__container clear__btn" type="button" >Clear all completed</button>
-    </div>
+    <main>
+        <div class="container flex column">
+            <div class="container__header flex">
+                <h1>Today's To Do</h1>
+                <button type="button" class="btn btn--refresh">
+                    <i class="icon icon--refresh"></i>
+                </button>
+            </div>
+            <form class="add__task flex" method="post" action="/">
+                <input type="text" placeholder="Add your list...">
+                <button type="submit" class="btn"><i class="icon icon--enter"></i></button>
+            </form>
+            <ul class="nav nav__items" id="list_navv">
+            </ul>
+            <div class="clear">
+                <button type="button" class="btn clear--all" id="clearAllBTN">Clear all completed</button>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
