@@ -1,99 +1,270 @@
-#todo__list__container {
-  display: grid;
-  justify-items: center;
-  background-color: white;
-  width: 40%;
-  margin: 0 auto;
-  border-radius: 2px;
-  box-shadow: 0 2px 13px #aaa;
-  font-family: 'Circular-Loom', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,;300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Custom properties */
+
+:root {
+  /* font-families */
+  --ff-sans: 'Open Sans', sans-serif;
 }
 
-.item__container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #e1e1e1;
-  height: 56px;
-  justify-content: space-around;
+/* RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-#list__item {
-  width: 100%;
+/* Remove default link style */
+a {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.item {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  width: 96%;
-  justify-content: flex-start;
-  font-family: 'Circular-Loom', sans-serif;
-}
-
-.header__item i {
-  color: #a3a3a3;
-}
-
-.item__container div i {
-  color: #a3a3a3;
-}
-
-.title {
-  justify-content: start;
-  width: 100%;
-  font-family: 'Circular-Loom', sans-serif;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-form {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.input__list {
-  width: 99%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  font-style: italic;
-  font-size: 23px;
-  font-family: monospace, sans-serif;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-.input__list:focus {
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-sans);
+  background-color: var(--clr-body-bg);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:focus,
+input:focus {
   outline: none;
 }
 
-.todo__list {
-  font-style: normal !important;
+/* Remove default button styles */
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.header__item {
-  width: 96%;
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.column {
+  flex-direction: column !important;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  font-family: var(--ff-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+  color: var(--clr-text-secondary);
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
 }
 
-.checkbox {
-  margin-right: 15px;
-  margin-left: 2.3%;
+.hidden {
+  display: none !important;
 }
 
-.clear__btn {
-  background-color: #f3f3f3;
-  color: rgb(99, 99, 99);
+.icon {
+  max-width: 24px;
+  max-height: 24px;
 }
 
-button {
-  background: none;
+.icon--enter {
+  content: url('./assets/images/icons/ico-enter.svg');
+  min-width: 24px;
+}
+
+.icon--dots {
+  content: url('./assets/images/icons/ico-three-dots.svg');
+  min-width: 24px;
+}
+
+.icon--trash {
+  content: url('./assets/images/icons/ico-trash.svg');
+  min-width: 24px;
+}
+
+.container {
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-white);
+  box-shadow: 0 2px 13px #aaa;
+  margin: 0 auto;
+}
+
+.active {
+  background: #fffeca;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(148, 148, 148);
+}
+
+.container__header {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.container__header h1 {
+  font-size: 1.70rem;
+  font-weight: bold;
+  font-family: 'Circular-Loom', sans-serif;
+}
+
+.btn > svg {
+  width: 1.25rem;
+}
+
+.add__task {
+  width: 100%;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.add__task > input {
+  width: 99%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-style: italic;
+    font-size: 23px;
+    font-family: monospace, sans-serif;
+}
+
+.add__task > input::placeholder {
+  color: rgb(182, 181, 181);
+  font-weight: 400;
+}
+
+.list__item {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.25rem;
+}
+
+.nav__items > li {
+  width: 100%;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.list__item input[type='text'] {
+  width: 100%;
+  font-size: 23px;
+  font-weight: 400;
+    font-family: monospace, sans-serif;
+  text-align: start;
+  padding: 1.25rem;
   border: none;
 }
 
-.delete-button {
-  margin-right: 2%;
-  color: #a3a3a3;
+.clear {
+  width: 100%;
+
+}
+
+.clear button {
+  width: 100%;
+  color: rgb(96 96 96);
+  padding: 1.25rem;
+  background-color: #f3f3f3;
 }
 
 .checked {
