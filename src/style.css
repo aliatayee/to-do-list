@@ -201,7 +201,7 @@ input[type='reset'] {
 }
 
 .container__header h1 {
-  font-size: 1.70rem;
+  font-size: 1.7rem;
   font-weight: bold;
   font-family: 'Circular-Loom', sans-serif;
 }
@@ -219,12 +219,12 @@ input[type='reset'] {
 
 .add__task > input {
   width: 99%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    font-style: italic;
-    font-size: 23px;
-    font-family: monospace, sans-serif;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-style: italic;
+  font-size: 23px;
+  font-family: monospace, sans-serif;
 }
 
 .add__task > input::placeholder {
@@ -249,7 +249,7 @@ input[type='reset'] {
   width: 100%;
   font-size: 23px;
   font-weight: 400;
-    font-family: monospace, sans-serif;
+  font-family: monospace, sans-serif;
   text-align: start;
   padding: 1.25rem;
   border: none;
@@ -257,7 +257,6 @@ input[type='reset'] {
 
 .clear {
   width: 100%;
-
 }
 
 .clear button {

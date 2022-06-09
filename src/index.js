@@ -1,5 +1,6 @@
 import './style.css';
 import Task from './modules/toDoTask.js';
+
 const todoItemsList = document.querySelector('#list_navv');
 const clearAllBtn = document.querySelector('#clearAllBTN');
 const task = new Task();
@@ -13,14 +14,14 @@ const toggle = (index) => {
       item.completed = !item.completed;
     }
   });
-task.addTask();
-window.location.reload();
+  task.addTask();
+  window.location.reload();
 };
 
 const clearAll = () => {
   task.tasksArray.forEach((data) => {
     if (data.completed === true) {
-      task.tasksArray =  task.tasksArray.filter((item) => item.index != data.index);
+      task.tasksArray = task.tasksArray.filter((item) => item.index != data.index);
     }
   });
   task.tasksArray.forEach((task, i) => {
