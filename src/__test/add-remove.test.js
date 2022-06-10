@@ -3,6 +3,7 @@
  */
 import {
   displayTasks,
+  removeTask,
 } from '../modules/functionalities.js';
 import Task from '../modules/toDoTask.js';
 
@@ -25,7 +26,15 @@ describe('Test Add Task and local storage', () => {
   });
 
   test('Test local storage', () => {
-    JSON.parse(localStorage.getItem('TASKS'));
+    JSON.parse(localStorage.getItem('todos'));
     expect(localStorage).toHaveLength(1);
+  });
+});
+
+describe('Test Remove task from list', () => {
+  window.localStorage = Storage.prototype;
+  test('Remove task', () => {
+    removeTask(Tasks.tasksArray, Tasks.addTask, '0');
+    expect(Tasks.tasksArray).toHaveLength(0);
   });
 });
