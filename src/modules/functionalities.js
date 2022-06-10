@@ -24,7 +24,6 @@ const removeTask = (taskArray, addTask, id) => {
     task.index = i;
   });
   addTask();
-  // window.location.reload();
 };
 
 const deletTask = () => {
