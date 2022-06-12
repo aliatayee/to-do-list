@@ -1,5 +1,5 @@
-
 /* eslint eqeqeq: 0 */
+// Mark as Complete Functionality
 const toggle = (index, task) => {
   task.tasksArray.forEach((item) => {
     if (item.index == index) {
@@ -8,7 +8,7 @@ const toggle = (index, task) => {
   });
   task.addTask();
 };
-
+// Clear All Completed Functionality
 const clearAll = (task) => {
   task.tasksArray.forEach((data) => {
     if (data.completed === true) {
