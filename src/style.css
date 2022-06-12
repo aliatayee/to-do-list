@@ -56,7 +56,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--ff-sans);
-  background-color: var(--clr-body-bg);
+  background-color: #22272e;
 }
 
 /* A elements that don't have a class get default styles */
@@ -160,7 +160,7 @@ input[type='reset'] {
 }
 
 .icon--enter {
-  content: url('./assets/images/icons/ico-enter.svg');
+  content: url('./assets/images/icons/enter.png');
   min-width: 24px;
 }
 
@@ -179,8 +179,10 @@ input[type='reset'] {
   align-items: center;
   justify-content: center;
   background: var(--clr-white);
-  box-shadow: 0 2px 13px #aaa;
+  box-shadow: 0 4px 12px #000;
   margin: 0 auto;
+  margin-top: 4%;
+  border-radius: 5px;
 }
 
 .active {
@@ -197,10 +199,14 @@ input[type='reset'] {
   align-items: center;
   width: 100%;
   padding: 1.25rem;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #444c56;
+  background-color: #2d333b;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .container__header h1 {
+  color: white;
   font-size: 1.7rem;
   font-weight: bold;
   font-family: 'Circular-Loom', sans-serif;
@@ -214,7 +220,7 @@ input[type='reset'] {
   width: 100%;
   align-items: center;
   padding: 1.25rem;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #444c56;
 }
 
 .add__task > input {
@@ -242,7 +248,7 @@ input[type='reset'] {
 
 .nav__items > li {
   width: 100%;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #444c56;
 }
 
 .list__item input[type='text'] {
@@ -253,6 +259,13 @@ input[type='reset'] {
   text-align: start;
   padding: 1.25rem;
   border: none;
+  color: white;
+  background-color: #22272e;
+}
+
+.list__item input[type='text'].active {
+  background-color: #fffeca;
+  color: #22272e;
 }
 
 .clear {
@@ -261,15 +274,31 @@ input[type='reset'] {
 
 .clear button {
   width: 100%;
-  color: rgb(96 96 96);
+  color: rgb(255 255 255);
   padding: 1.25rem;
-  background-color: #f3f3f3;
+  background-color: #36b73d;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .checked {
   text-decoration: line-through;
-  text-decoration-color: #a7a7a7;
+  text-decoration-color: #e7f2ffb9;
   font-weight: 400;
   font-style: italic !important;
-  color: #868686 !important;
+  color: #398df3 !important;
+}
+
+input[type="text"] {
+  color: #fff;
+}
+
+input[type="text"]:focus {
+  color: #fff;
+}
+
+@media screen and (max-width: 995px) {
+  .container {
+    width: 93%;
+  }
 }
