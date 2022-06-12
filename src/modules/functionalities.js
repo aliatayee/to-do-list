@@ -1,6 +1,7 @@
 let deletedTask = false;
 
 const displayTasks = (tasks, container) => {
+  container.innerHTML = '';
   tasks.slice().reverse().forEach((task) => {
     const checked = task.completed ? 'checked' : null;
     const taskElement = `<li data-id="${task.index}">
@@ -40,7 +41,7 @@ const editTasks = (newDesc, taskArray, addTask, index) => {
   addTask();
 };
 
-const inputEvents = (tasks, addTask, listContainer) => {
+const inputEvents = (tasks, addTask, listContainer,render) => {
   const inputs = listContainer.querySelectorAll('input[type="text"]');
   let newDesc = '';
 
@@ -75,11 +76,13 @@ const inputEvents = (tasks, addTask, listContainer) => {
         }
       } else {
         removeTask(tasks, addTask, index);
+        addTask();
+        render();
       }
 
       newDesc = '';
       deletedTask = false;
-      window.location.reload();
+      
     });
   });
 };

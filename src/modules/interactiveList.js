@@ -1,3 +1,4 @@
+
 /* eslint eqeqeq: 0 */
 const toggle = (index, task) => {
   task.tasksArray.forEach((item) => {
@@ -14,8 +15,8 @@ const clearAll = (task) => {
       task.tasksArray = task.tasksArray.filter((item) => item.index != data.index);
     }
   });
-  task.tasksArray.forEach((task, i) => {
-    task.index = i;
+  task.tasksArray.forEach((task1, i) => {
+    task1.index = i;
   });
   task.addTask();
 };

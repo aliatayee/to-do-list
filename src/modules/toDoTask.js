@@ -6,19 +6,16 @@ import {
   deletTask as Delete,
 } from './functionalities.js';
 
-const listContainer = document.querySelector('.nav__items');
-
 class Task {
   constructor() {
     this.tasksArray = JSON.parse(localStorage.getItem('todos')) || [];
+    this.listContainer = document.querySelector('.nav__items');
   }
 
   render = () => {
-    Form(this.addTask, this.tasksArray);
-
-    Display(this.tasksArray, listContainer);
-
-    Edit(this.tasksArray, this.addTask, listContainer);
+    Form(this.addTask, this.tasksArray,this.render);
+    Display(this.tasksArray, this.listContainer);
+    Edit(this.tasksArray, this.addTask,this.listContainer, this.render);
     Delete(this.tasksArray, this.addTask);
   };
 
@@ -27,7 +24,7 @@ class Task {
       this.tasksArray.push(task);
       localStorage.setItem('todos', JSON.stringify(this.tasksArray));
     } else {
-      localStorage.setItem('todos', JSON.stringify(this.tasksArray));
+     localStorage.setItem('todos', JSON.stringify(this.tasksArray));
     }
   };
 }
