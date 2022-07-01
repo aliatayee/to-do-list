@@ -1,12 +1,14 @@
 
 # To Do List
 This is a Webpack based to-do-list project. With this app, users can add thier daily routine tasks to the list, mark them as complet, edit them or delete them. 
+![](./assets/images/Screenshot%20(169).png)
+
 ## Major Technologies
-HTML5
-CSS
-JAVASCRIPT
-NPM
-WEBPACK
+- [ ] HTML5
+- [ ] CSS
+- [ ] JAVASCRIPT
+- [ ] NPM
+- [ ] WEBPACK
 ### Demo
 [To Do List](https://aliatayee.github.io/to-do-list/)
 ### Install & Setup
